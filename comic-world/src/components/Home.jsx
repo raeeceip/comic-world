@@ -6,6 +6,7 @@ import Container from "./Container";
 import SearchBar from "./SearchBar";
 import Grid from "./Grid";
 import Card from "./Card";
+import Carousel from "./Carousel";
 
 import { fetchHeros } from "../libs/utils";
 
@@ -45,8 +46,9 @@ export default function Home() {
 				<h1>Find Any Marvel Hero Here</h1>
 			</div>
 			<SearchBar handleClick={handleClick} setHeroes={setHeroes} />
-			<h2>Results</h2>
-			<Grid>{cards ? cards : null}</Grid>
+			<div>
+				<Grid>{cards ? cards : error}</Grid>
+			</div>
 		</Container>
 	);
 }

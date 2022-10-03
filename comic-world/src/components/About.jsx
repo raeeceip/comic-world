@@ -8,6 +8,7 @@ const About = () => {
 				This is a project created with React and the Marvel API. The purpose is
 				to learn how to use React and the Marvel API.
 			</p>
+			<button>Go to Marvel Developer Website</button>
 		</div>
 	);
 };

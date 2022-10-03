@@ -12,7 +12,7 @@ export default function SearchBar({ handleClick, setHeroes, setError }) {
 				handleClick={(e) => {
 					handleClick(e, input.current.value)
 						.then((data) => setHeroes(data.data.results))
-						.catch((err) => setError(err));
+						.catch((err) => setError("No results found"));
 				}}
 			/>
 		</form>
