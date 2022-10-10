@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { fetchHero } from "../libs/utils";
+import { fetchComic } from "../../libs/utils";
 
-export default function HeroDetails() {
+export default function ComicDetails() {
 	let { id } = useParams();
 
-	const [hero, setHero] = useState();
+	const [comic, setComic] = useState();
 
-	let name;
+	let title;
 	let description;
 	let thumbnailPath;
 	let thumbnailExtension;
@@ -16,24 +16,24 @@ export default function HeroDetails() {
 	let series;
 
 	useEffect(() => {
-		fetchHero(id)
-			.then((data) => setHero(data))
+		fetchComic(id)
+			.then((data) => setComic(data))
 			.catch((err) => console.error(err));
 	}, []);
 
-	if (hero) {
-		name = hero.data.results[0].name;
-		description = hero.data.results[0].description;
-		thumbnailPath = hero.data.results[0].thumbnail.path;
-		thumbnailExtension = hero.data.results[0].thumbnail.extension;
+	if (comic) {
+		title = comic.data.results[0].title;
+		description = comic.data.results[0].description;
+		thumbnailPath = comic.data.results[0].thumbnail.path;
+		thumbnailExtension = comic.data.results[0].thumbnail.extension;
 		thumbnailUrl = `${thumbnailPath}.${thumbnailExtension}`;
-		series = hero.data.results[0].series.items;
+		series = comic.data.results[0].series.items;
 	}
 
-	if (!hero)
+	if (!comic)
 		return (
 			<div>
-				<h1>Fetching Hero</h1>
+				<h1>Fetching Comic</h1>
 			</div>
 		);
 
@@ -42,8 +42,8 @@ export default function HeroDetails() {
 			<div className="hero__details-container">
 				<img src={thumbnailUrl} alt="hero image full size" />
 				<div className="hero__details">
-					<h4>Name</h4>
-					<p>{name}</p>
+					<h4>Title</h4>
+					<p>{title}</p>
 					{description ? (
 						<>
 							<h4>Description</h4>

@@ -2,7 +2,12 @@ import React, { useRef } from "react";
 
 import Button from "./Button";
 
-export default function SearchBar({ handleClick, setHeroes, setError }) {
+export default function SearchBar({
+	handleClick,
+	setHeroes,
+	setError,
+	setComics,
+}) {
 	let input = useRef();
 	return (
 		<form>
@@ -12,7 +17,8 @@ export default function SearchBar({ handleClick, setHeroes, setError }) {
 				handleClick={(e) => {
 					handleClick(e, input.current.value)
 						.then((data) => setHeroes(data.data.results))
-						.catch((err) => setError("No results found"));
+						.then((data) => setComics(data.data.results))
+						.catch((err) => setError(err));
 				}}
 			/>
 		</form>

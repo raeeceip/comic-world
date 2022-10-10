@@ -8,12 +8,14 @@ import Grid from "./Grid";
 import Card from "./Card";
 import Carousel from "./Carousel";
 
-import { fetchHeros } from "../libs/utils";
+import { fetchHeros, fetchComics } from "../libs/utils";
+import { comment } from "postcss";
 
 const IMG_FANTASTIC = "portrait_fantastic";
 
 export default function Home() {
 	const [heroes, setHeroes] = useState([]);
+	const [comics, setComics] = useState([]);
 	const [error, setError] = useState();
 
 	let cards;
@@ -23,12 +25,12 @@ export default function Home() {
 		if (args === "") return;
 
 		try {
-			return await fetchHeros(args);
+			return await fetchComics(args);
 		} catch (err) {
 			return err;
 		}
 	};
-
+	/*
 	if (heroes) {
 		cards = heroes.map((hero) => (
 			<Card
@@ -39,13 +41,28 @@ export default function Home() {
 			/>
 		));
 	}
+	*/
+	if (comics) {
+		cards = comics.map((comic) => (
+			<Card
+				name={comic.title}
+				key={comic.id}
+				id={comic.id}
+				thumbnail={`${comic.thumbnail.path}/${IMG_FANTASTIC}.${comic.thumbnail.extension}`}
+			/>
+		));
+	}
 
 	return (
 		<Container>
 			<div className="title">
-				<h1>Find Any Marvel Hero Here</h1>
+				<h1>Find Any Marvel Comic Here</h1>
 			</div>
-			<SearchBar handleClick={handleClick} setHeroes={setHeroes} />
+			<SearchBar
+				handleClick={handleClick}
+				setComics={setComics}
+				setError={setError}
+			/>
 			<div>
 				<Grid>{cards ? cards : error}</Grid>
 			</div>
