@@ -61,7 +61,7 @@ export default function Home() {
 			</div>
 			<SearchBar
 				handleClick={handleClick}
-				setComics={setHeroes}
+				setHeroes={setHeroes}
 				setError={setError}
 			/>
 			<div>
