@@ -25,12 +25,12 @@ export default function Home() {
 		if (args === "") return;
 
 		try {
-			return await fetchComics(args);
+			return await fetchHeros(args);
 		} catch (err) {
 			return err;
 		}
 	};
-	/*
+
 	if (heroes) {
 		cards = heroes.map((hero) => (
 			<Card
@@ -41,7 +41,7 @@ export default function Home() {
 			/>
 		));
 	}
-	*/
+	/*
 	if (comics) {
 		cards = comics.map((comic) => (
 			<Card
@@ -52,6 +52,7 @@ export default function Home() {
 			/>
 		));
 	}
+	*/
 
 	return (
 		<Container>
@@ -60,7 +61,7 @@ export default function Home() {
 			</div>
 			<SearchBar
 				handleClick={handleClick}
-				setComics={setComics}
+				setComics={setHeroes}
 				setError={setError}
 			/>
 			<div>
