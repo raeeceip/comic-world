@@ -51,7 +51,7 @@ export default function HeroDetails() {
 						</>
 					) : null}
 					<div className="hero__series">
-						<h4>Series</h4>
+						<h4>Appears in:</h4>
 						<ul>
 							{series
 								? series.map((title) => (

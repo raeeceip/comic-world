@@ -76,6 +76,7 @@ form input {
 }
 
 header {
+	background-color: royalblue !important;
 	min-width: 100%;
 	background-color: white;
 }
@@ -127,6 +128,7 @@ header {
 }
 
 .card:hover {
+	scale: 1.04;
 	box-shadow: 0 5px 50px rgba(0, 0, 0, 0.2);
 	transition: all 0.2s ease-in;
 }

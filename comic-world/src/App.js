@@ -5,14 +5,14 @@ import Logo from "./components/Navbar/Logo";
 import HeroDetails from "./components/HeroDetails";
 import Home from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 const App =() =>{
 
     return(
-        <Router>
-        <Navbar logo={<Logo text={"Marbabel"} />}>
+      <Router>
+        <Navbar logo={<Logo text={"Comic-Finder"} />}>
           <NavItem to={"/"} text={"Home"} />
           <NavItem to={"/about"} text={"About"} />
         </Navbar>

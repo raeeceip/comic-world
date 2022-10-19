@@ -17,7 +17,7 @@ export default function SearchBar({
 				handleClick={(e) => {
 					handleClick(e, input.current.value)
 						.then((data) => setHeroes(data.data.results))
-						.then((data) => setComics(data.data.results))
+
 						.catch((err) => setError(err));
 				}}
 			/>
