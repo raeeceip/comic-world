@@ -164,3 +164,9 @@ header {
 	list-style: disc;
 	margin-left: 1.5rem;
 }
+.hero_loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
