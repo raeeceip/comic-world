@@ -2,6 +2,7 @@ import React from "react";
 
 import { useState } from "react";
 
+import Loader from "./Loader";
 import Container from "./Container";
 import SearchBar from "./SearchBar";
 import Grid from "./Grid";
@@ -19,6 +20,7 @@ export default function Home() {
 	const [error, setError] = useState();
 
 	let cards;
+	const loader = <Loader />;
 
 	const handleClick = async (e, args) => {
 		e.preventDefault();
