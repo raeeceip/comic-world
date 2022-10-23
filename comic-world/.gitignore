@@ -12,7 +12,7 @@ dist
 dist-ssr
 .parcel-cache
 .env
-public
+
 *.local
 
 # Editor directories and files

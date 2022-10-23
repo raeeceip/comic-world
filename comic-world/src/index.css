@@ -77,6 +77,10 @@ form input {
 	align-items: center;
 }
 
+body {
+	font-family: Lister Hollow;
+	font-size: 20px;
+}
 .navbar ul {
 	display: flex;
 	flex-direction: row;
