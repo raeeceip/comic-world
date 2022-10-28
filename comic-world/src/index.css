@@ -34,6 +34,10 @@ body {
 	font-family: Lister Hollow;
 	font-size: 20px;
 	color: red;
+	background-image: url("../public/bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 h2,
@@ -216,4 +220,14 @@ header {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+}
+/* set bg image for mobile */
+@media screen and (max-width: 768px) {
+	body {
+		background-image: url("../public/mobile-bg-1.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		color: white;
+	}
 }
