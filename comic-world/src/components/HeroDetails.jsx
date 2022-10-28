@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Puff } from "react-loader-spinner";
+import HeroError from "./HeroError";
 
 import { fetchHero } from "../libs/utils";
 
 export default function HeroDetails() {
 	let { id } = useParams();
-
+	const heroerror = <HeroError />;
 	const [hero, setHero] = useState();
 
 	let name;
@@ -68,7 +69,7 @@ export default function HeroDetails() {
 								? series.map((title) => (
 										<li key={Math.random() * 1000}>{title.name}</li>
 								  ))
-								: null}
+								: "not found"}
 						</ul>
 					</div>
 				</div>
